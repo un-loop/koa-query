@@ -5,6 +5,7 @@ class Query {
 
         copy.max = this.max;
         copy.isOrdered = this.isOrdered;
+        copy.index = this.index;
         return copy;
     }
 
@@ -17,6 +18,12 @@ class Query {
     order(inOrder = true) {
         var query = this.copy();
         query.isOrdered = inOrder;
+        return query;
+    }
+
+    index(index) {
+        var query = this.copy();
+        query.index = index;
         return query;
     }
 
@@ -52,6 +59,10 @@ function buildQuery(ctx) {
 
     if (ctx.query["top"] !== undefined) {
         query = query.limit(parseInt(ctx.query["top"]));
+    }
+
+    if (ctx.query['index' !== undefined]) {
+        query = query.index(ctx.index);
     }
 
     return query;
