@@ -21,9 +21,9 @@ class Query {
         return query;
     }
 
-    index(ind) {
+    set_index(index) {
         var query = this.copy();
-        query.index = ind;
+        query.index = index;
         return query;
     }
 
@@ -62,7 +62,7 @@ function buildQuery(ctx) {
     }
 
     if (ctx.query['index' !== undefined]) {
-        query = query.index(ctx.index);
+        query = query.set_index(ctx.index);
     }
 
     return query;
