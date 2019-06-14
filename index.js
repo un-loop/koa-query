@@ -61,8 +61,8 @@ function buildQuery(ctx) {
         query = query.limit(parseInt(ctx.query["top"]));
     }
 
-    if (ctx.query['index' !== undefined]) {
-        query = query.set_index(ctx.index);
+    if (ctx.query['index'] !== undefined) {
+        query = query.set_index(ctx.query["index"]);
     }
 
     return query;
