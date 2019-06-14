@@ -21,9 +21,9 @@ class Query {
         return query;
     }
 
-    index(index) {
+    index(ind) {
         var query = this.copy();
-        query.index = index;
+        query.index = ind;
         return query;
     }
 

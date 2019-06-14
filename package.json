@@ -1,6 +1,6 @@
 {
   "name": "unloop-koa-query",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "koa middleware for turning query params into a structured query object on ctx.dbQuery",
   "main": "index.js",
   "scripts": {
