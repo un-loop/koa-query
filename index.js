@@ -1,6 +1,6 @@
 class Query {
     copy() {
-        var copy = this.partitionKey ? Query.GetKeyedQuery(this.partitionKey) :
+        let copy = this.partitionKey ? Query.GetKeyedQuery(this.partitionKey) :
                                Query.GetQuery(this.orderBy);
 
         copy.max = this.max;
@@ -10,19 +10,19 @@ class Query {
     }
 
     limit(limit) {
-        var query = this.copy();
+        let query = this.copy();
         query.max = Math.min(this.max || limit, limit);
         return query;
     }
 
     order(inOrder = true) {
-        var query = this.copy();
+        let query = this.copy();
         query.isOrdered = inOrder;
         return query;
     }
 
-    set_index(index) {
-        var query = this.copy();
+    withIndex(index) {
+        let query = this.copy();
         query.index = index;
         return query;
     }
