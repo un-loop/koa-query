@@ -62,7 +62,7 @@ function buildQuery(ctx) {
     }
 
     if (ctx.query['index'] !== undefined) {
-        query = query.set_index(ctx.query["index"]);
+        query = query.withIndex(ctx.query["index"]);
     }
 
     return query;
